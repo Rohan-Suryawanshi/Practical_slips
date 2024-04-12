@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <form name="membershipForm" onsubmit="return validateForm()">
+         Username: <input type="text" name="username" /><br />
+         Password: <input type="password" name="password" /><br />
+         <input type="submit" value="Submit" />
+      </form>
+      <script>
+         function validateForm() {
+            var username = document.forms["membershipForm"]["username"].value;
+            var password = document.forms["membershipForm"]["password"].value;
+
+            // Check if username is empty
+            if (username == "") {
+               alert("Username must be filled out");
+               return false;
+            }
+
+            // Check if password is empty
+            if (password == "") {
+               alert("Password must be filled out");
+               return false;
+            }
+
+            // Check if password length is less than 6 characters
+            if (password.length < 6) {
+               alert("Password must be at least 6 characters long");
+               return false;
+            }
+
+            // If all validations pass, return true
+            return true;
+         }
+      </script>
+   </body>
+</html>
