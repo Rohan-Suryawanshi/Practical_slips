@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="button" value="Login" onclick="checkLogin()">
+    </form>
+    <div id="loginResult"></div>
+    <script>
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById("loginResult").innerHTML = xhr.responseText;
+                    } else {
+                        console.log('Error: ' + xhr.status);
+                    }
+                }
+            };
+            xhr.open("GET", "check_login.php?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password), true);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

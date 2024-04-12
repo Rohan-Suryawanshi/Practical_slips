@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Name Input</title>
+    <style>
+        .red {
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function changeStyle(input) {
+            var name = input.value.trim();
+            var text = document.getElementById('text');
+            var image = document.getElementById('image');
+            
+            if (name !== "") {
+                text.innerText = name;
+                text.classList.add('red');
+            } else {
+                image.style.width = '200px';
+                image.style.height = '200px';
+                image.src = 'image.png';
+            }
+        }
+        
+        function changeImageSize() {
+            var image = document.getElementById('image');
+            image.style.width = '250px';
+            image.style.height = '250px';
+        }
+        
+        function resetImageSize() {
+            var image = document.getElementById('image');
+            image.style.width = '200px';
+            image.style.height = '200px';
+        }
+    </script>
+</head>
+<body>
+    <h2>Student Name Input</h2>
+    <label for="name">Enter Student Name:</label>
+    <input type="text" id="name" onblur="changeStyle(this)">
+    <p id="text"></p>
+    <img id="image" src="image.png" width="200" height="200" onmouseover="changeImageSize()" onmouseup="resetImageSize()">
+</body>
+</html>

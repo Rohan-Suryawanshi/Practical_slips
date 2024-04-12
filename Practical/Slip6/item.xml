@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <item_name>Smartphone</item_name>
+        <item_rate>500</item_rate>
+        <item_quantity>10</item_quantity>
+    </item>
+    <item>
+        <item_name>Laptop</item_name>
+        <item_rate>800</item_rate>
+        <item_quantity>5</item_quantity>
+    </item>
+    <item>
+        <item_name>Headphones</item_name>
+        <item_rate>50</item_rate>
+        <item_quantity>20</item_quantity>
+    </item>
+    <item>
+        <item_name>Mouse</item_name>
+        <item_rate>20</item_rate>
+        <item_quantity>15</item_quantity>
+    </item>
+    <item>
+        <item_name>Keyboard</item_name>
+        <item_rate>30</item_rate>
+        <item_quantity>12</item_quantity>
+    </item>
+</items>

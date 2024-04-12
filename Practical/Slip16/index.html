@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+    <h2>Select a Book:</h2>
+    <select id="selectBook" onchange="get_Book()">
+        <option value="">Select a book</option>
+        <option value="Book 1">Book 1</option>
+        <option value="Book 2">Book 2</option>
+        <option value="Book 3">Book 3</option>
+    </select>
+    <div id="bookDetails">
+    </div>
+
+    <script>
+        function get_Book()
+        {
+            var selectedBook = document.getElementById("selectBook").value;
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        document.getElementById('bookDetails').innerHTML = xhr.responseText;
+                        
+                    } else {
+                        console.error('Error');
+                    }
+                }
+            };
+            xhr.open('GET', 'demo.php?book='+selectedBook, true);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
